@@ -1,0 +1,23 @@
+# Amazon Reviews 2023
+# Download: bash scripts/download_amazon.sh Video_Games
+
+dataset: amazon
+category: Video_Games
+kcore: 5                # 5-core keeps more interactions than 10-core
+implicit_threshold: 3   # ≥3 stars = positive signal; includes neutral-positive
+
+# Shared
+batch_size: 2048
+learning_rate: 0.005   # same as MovieLens — 0.001 was too slow to converge
+weight_decay: 0.00001  # lighter regularisation for sparser Amazon data
+epochs: 50
+top_k: 10
+
+# BPR-MF
+embedding_dim: 64
+
+# NeuMF / ContentNeuMF
+gmf_dim: 32
+mlp_dims: [128, 64, 32]
+category_emb_dim: 8
+dropout: 0.2

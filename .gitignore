@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Artifacts (large binaries — use DVC or similar for versioning)
+artifacts/*.pt
+artifacts/*.pkl
+
+# Data (too large for git)
+data/raw/ml-100k/
+data/raw/*.zip
+
+# Logs
+*.log
+logs/

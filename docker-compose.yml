@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./data:/app/data:ro
+      - ./configs:/app/configs:ro
+    environment:
+      - PYTHONUNBUFFERED=1

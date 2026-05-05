@@ -1,0 +1,7 @@
+{
+    "dataset": "amazon",
+    "model": "content_ncf",
+    "eval_protocol": "sampled_99neg",
+    "HR@10": 0.6077590037195486,
+    "NDCG@10": 0.3818885430939283
+}
