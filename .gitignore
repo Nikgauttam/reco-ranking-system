@@ -30,9 +30,8 @@ htmlcov/
 artifacts/*.pt
 artifacts/*.pkl
 
-# Data (too large for git)
-data/raw/ml-100k/
-data/raw/*.zip
+# Data (too large for git — download via scripts/download_amazon.sh)
+data/raw/
 
 # Logs
 *.log
