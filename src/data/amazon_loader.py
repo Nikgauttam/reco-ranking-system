@@ -104,10 +104,10 @@ def apply_kcore_filter(df: pd.DataFrame, k: int = 10) -> pd.DataFrame:
     logger.info("Applying %d-core filter...", k)
     while True:
         before = len(df)
-        item_counts = df["user_id"].value_counts()
-        df = df[df["user_id"].isin(item_counts[item_counts >= k].index)]
-        user_counts = df["item_id"].value_counts()
-        df = df[df["item_id"].isin(user_counts[user_counts >= k].index)]
+        user_counts = df["user_id"].value_counts()
+        df = df[df["user_id"].isin(user_counts[user_counts >= k].index)]
+        item_counts = df["item_id"].value_counts()
+        df = df[df["item_id"].isin(item_counts[item_counts >= k].index)]
         if len(df) == before:
             break
     logger.info("After %d-core: %d interactions remain", k, len(df))

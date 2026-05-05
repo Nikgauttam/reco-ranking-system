@@ -21,16 +21,15 @@ def build_content_features(
     interactions_df: pd.DataFrame,
     metadata_df: pd.DataFrame,
     item_map: dict[str, int],
-) -> tuple[np.ndarray, dict[str, int]]:
+) -> tuple[np.ndarray, np.ndarray, dict[str, int]]:
     """
     Build an item feature matrix aligned with item_map.
 
     Returns:
-        features   — float32 array of shape [num_items, 2]
-                     columns: [price_bucket_normalised, avg_rating_normalised]
-        cat_map    — {category_string: integer_index}
-
-    The category index is returned separately for use as an embedding lookup.
+        cont_features — float32 array of shape [num_items, 2]
+                        columns: [price_bucket_normalised, avg_rating_normalised]
+        cat_idx       — int64 array of shape [num_items] mapping items to category indices
+        cat_map       — {category_string: integer_index}
     """
     num_items = len(item_map)
 
